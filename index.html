@@ -221,6 +221,40 @@
       color: var(--text);
     }
 
+
+    .avatar-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .avatar {
+      width: 136px;
+      height: 136px;
+      border-radius: 999px;
+      object-fit: cover;
+      object-position: center;
+      border: 4px solid color-mix(in srgb, var(--surface-solid) 80%, transparent);
+      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.18);
+      background: var(--surface-solid);
+    }
+
+    .profile-name {
+      text-align: center;
+      margin: 0 0 4px;
+      font-size: 22px;
+      letter-spacing: -0.04em;
+      font-weight: 850;
+    }
+
+    .profile-title {
+      text-align: center;
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
     .profile-card {
       position: relative;
       border: 1px solid var(--border);
@@ -558,11 +592,18 @@
           <div class="cta">
             <a class="btn primary" href="mailto:pszhun90@gmail.com">Contact Me</a>
             <a class="btn secondary" href="https://www.linkedin.com/in/pohsengzhun" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="btn secondary" href="Poh_Seng_Zhun_Resume_Professional.pdf" target="_blank">Download Resume</a>
+            <a class="btn secondary" href="Poh_Seng_Zhun_CV.pdf" target="_blank">Download CV</a>
           </div>
         </div>
 
         <aside class="profile-card" aria-label="At a glance">
+
+          <div class="avatar-wrap">
+            <img class="avatar" src="profile.jpg" alt="Poh Seng Zhun profile photo" />
+          </div>
+          <h2 class="profile-name">Poh Seng Zhun</h2>
+          <p class="profile-title">Senior Software Engineer · Backend & Distributed Systems</p>
+
           <div class="metric">
             <strong>12+</strong>
             <span>years in software engineering</span>
