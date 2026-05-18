@@ -1,883 +1,883 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Poh Seng Zhun - Senior Software Engineer focused on R&D, backend platform engineering, distributed systems, Java, Spring Boot, Kafka, and APAC remote-friendly roles." />
-  <title>Poh Seng Zhun | Senior Software Engineer</title>
-
-  <style>
-    :root {
-      --bg: #f7f8fb;
-      --surface: rgba(255, 255, 255, 0.78);
-      --surface-solid: #ffffff;
-      --text: #172033;
-      --muted: #64748b;
-      --faint: #8a94a6;
-      --border: rgba(148, 163, 184, 0.28);
-      --accent: #2563eb;
-      --accent-2: #0ea5e9;
-      --accent-soft: #eef6ff;
-      --shadow: 0 18px 60px rgba(15, 23, 42, 0.08);
-      --radius-xl: 28px;
-      --radius-lg: 20px;
-      --max: 1080px;
-    }
-
-    html[data-theme="dark"] {
-      --bg: #0a1020;
-      --surface: rgba(16, 24, 40, 0.74);
-      --surface-solid: #111827;
-      --text: #edf2ff;
-      --muted: #b3bfd4;
-      --faint: #8f9bb0;
-      --border: rgba(148, 163, 184, 0.22);
-      --accent: #60a5fa;
-      --accent-2: #22d3ee;
-      --accent-soft: rgba(37, 99, 235, 0.16);
-      --shadow: 0 18px 70px rgba(0, 0, 0, 0.25);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      color: var(--text);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.65;
-      background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 34rem),
-        radial-gradient(circle at top right, rgba(14, 165, 233, 0.14), transparent 32rem),
-        var(--bg);
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
-      background-size: 46px 46px;
-      mask-image: linear-gradient(to bottom, black, transparent 70%);
-      z-index: -2;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: var(--accent-2);
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(18px);
-      background: color-mix(in srgb, var(--bg) 82%, transparent);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-      font-weight: 780;
-      letter-spacing: -0.04em;
-      line-height: 1.1;
-    }
-
-    .brand span:last-child {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 650;
-      letter-spacing: normal;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: 14px;
-      font-weight: 650;
-      color: var(--muted);
-    }
-
-    .nav-links a {
-      color: var(--muted);
-    }
-
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    .theme-button {
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
-      border-radius: 999px;
-      padding: 8px 12px;
-      cursor: pointer;
-      font-weight: 750;
-      box-shadow: none;
-    }
-
-    .hero {
-      padding: 88px 0 54px;
-    }
-
-    .hero-layout {
-      display: grid;
-      grid-template-columns: 1.24fr 0.76fr;
-      align-items: center;
-      gap: 38px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--accent);
-      background: var(--surface);
-      font-size: 13px;
-      font-weight: 750;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-    }
-
-    h1 {
-      margin: 22px 0 0;
-      max-width: 850px;
-      font-size: clamp(42px, 7vw, 80px);
-      line-height: 0.97;
-      letter-spacing: -0.075em;
-    }
-
-    .hero-text {
-      margin-top: 26px;
-      max-width: 780px;
-      color: var(--muted);
-      font-size: 20px;
-      line-height: 1.7;
-    }
-
-    .cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 12px 18px;
-      border-radius: 14px;
-      font-weight: 800;
-      border: 1px solid var(--border);
-      transition: transform 160ms ease, background 160ms ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn.primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #fff;
-      border-color: transparent;
-    }
-
-    .btn.secondary {
-      background: var(--surface);
-      color: var(--text);
-    }
-
-
-    .avatar-wrap {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 18px;
-    }
-
-    .avatar {
-      width: 136px;
-      height: 136px;
-      border-radius: 999px;
-      object-fit: cover;
-      object-position: center;
-      border: 4px solid color-mix(in srgb, var(--surface-solid) 80%, transparent);
-      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.18);
-      background: var(--surface-solid);
-    }
-
-    .profile-name {
-      text-align: center;
-      margin: 0 0 4px;
-      font-size: 22px;
-      letter-spacing: -0.04em;
-      font-weight: 850;
-    }
-
-    .profile-title {
-      text-align: center;
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .profile-card {
-      position: relative;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      border-radius: var(--radius-xl);
-      padding: 26px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .profile-card::before {
-      content: "";
-      position: absolute;
-      inset: -1px;
-      background:
-        radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.18), transparent 14rem),
-        radial-gradient(circle at 80% 10%, rgba(14, 165, 233, 0.12), transparent 14rem);
-      z-index: -1;
-    }
-
-    .metric {
-      display: grid;
-      grid-template-columns: 82px 1fr;
-      gap: 14px;
-      align-items: center;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .metric:last-child {
-      border-bottom: none;
-    }
-
-    .metric strong {
-      font-size: 27px;
-      letter-spacing: -0.05em;
-    }
-
-    .metric span {
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 650;
-    }
-
-    section {
-      padding: 36px 0;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 18px;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.05;
-      letter-spacing: -0.06em;
-    }
-
-    .section-note {
-      margin: 0;
-      max-width: 640px;
-      color: var(--muted);
-    }
-
-    .panel {
-      border: 1px solid var(--border);
-      background: var(--surface);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow);
-    }
-
-    .about-panel {
-      padding: 28px;
-      display: grid;
-      grid-template-columns: 1fr 0.72fr;
-      gap: 26px;
-    }
-
-    .about-panel p {
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 32px;
-      padding: 7px 11px;
-      background: var(--accent-soft);
-      color: color-mix(in srgb, var(--accent) 88%, var(--text));
-      border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 750;
-    }
-
-    .grid {
-      display: grid;
-      gap: 16px;
-    }
-
-    .grid.two {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .grid.three {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .card {
-      border: 1px solid var(--border);
-      background: var(--surface);
-      border-radius: var(--radius-lg);
-      padding: 22px;
-      min-height: 154px;
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 18px;
-      letter-spacing: -0.025em;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .card .number {
-      color: var(--accent);
-      font-weight: 900;
-      margin-bottom: 12px;
-      letter-spacing: -0.03em;
-    }
-
-    .open-panel {
-      padding: 24px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 22px;
-      align-items: center;
-    }
-
-    .open-panel p {
-      margin: 8px 0 0;
-      color: var(--muted);
-    }
-
-    .recent-list {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .recent-item {
-      border: 1px solid var(--border);
-      background: var(--surface);
-      border-radius: 16px;
-      padding: 16px;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 14px;
-    }
-
-    .role {
-      border: 1px solid var(--border);
-      background: var(--surface);
-      border-radius: var(--radius-lg);
-      padding: 22px;
-    }
-
-    .role-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 10px;
-    }
-
-    .role h3 {
-      margin: 0;
-      font-size: 18px;
-    }
-
-    .meta {
-      color: var(--faint);
-      font-weight: 700;
-      font-size: 13px;
-    }
-
-    ul {
-      margin: 12px 0 0;
-      padding-left: 20px;
-      color: var(--muted);
-    }
-
-    li {
-      margin: 7px 0;
-    }
-
-    .contact {
-      padding: 28px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 20px;
-      color: white;
-      background:
-        radial-gradient(circle at top left, rgba(96, 165, 250, 0.38), transparent 20rem),
-        linear-gradient(135deg, #0f172a, #172554);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-    }
-
-    .contact h2,
-    .contact p {
-      color: white;
-    }
-
-    .contact p {
-      margin: 12px 0 0;
-      opacity: 0.84;
-    }
-
-    .contact .btn.secondary {
-      background: rgba(255, 255, 255, 0.12);
-      color: white;
-      border-color: rgba(255, 255, 255, 0.22);
-    }
-
-    footer {
-      padding: 34px 0 46px;
-      color: var(--faint);
-      font-size: 14px;
-      text-align: center;
-    }
-
-    @media (max-width: 880px) {
-      .hero-layout,
-      .about-panel,
-      .grid.two,
-      .grid.three,
-      .open-panel,
-      .contact,
-      .recent-list {
-        grid-template-columns: 1fr;
-      }
-
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 16px 0;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      .hero {
-        padding-top: 52px;
-      }
-
-      .section-head,
-      .role-head {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media print {
-      .topbar, .theme-button, .cta {
-        display: none;
-      }
-
-      body {
-        background: white;
-      }
-
-      .panel, .card, .role {
-        box-shadow: none;
-        break-inside: avoid;
-      }
-    }
-  </style>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="description" content="Poh Seng Zhun - Senior Software Engineer focused on R&D, backend platform engineering, distributed systems, Java, Spring Boot, Kafka, and APAC remote-friendly roles." />
+ <title>Poh Seng Zhun | Senior Software Engineer</title>
+
+ <style>
+  :root {
+   --bg: #f7f8fb;
+   --surface: rgba(255, 255, 255, 0.78);
+   --surface-solid: #ffffff;
+   --text: #172033;
+   --muted: #64748b;
+   --faint: #8a94a6;
+   --border: rgba(148, 163, 184, 0.28);
+   --accent: #2563eb;
+   --accent-2: #0ea5e9;
+   --accent-soft: #eef6ff;
+   --shadow: 0 18px 60px rgba(15, 23, 42, 0.08);
+   --radius-xl: 28px;
+   --radius-lg: 20px;
+   --max: 1080px;
+  }
+
+  html[data-theme="dark"] {
+   --bg: #0a1020;
+   --surface: rgba(16, 24, 40, 0.74);
+   --surface-solid: #111827;
+   --text: #edf2ff;
+   --muted: #b3bfd4;
+   --faint: #8f9bb0;
+   --border: rgba(148, 163, 184, 0.22);
+   --accent: #60a5fa;
+   --accent-2: #22d3ee;
+   --accent-soft: rgba(37, 99, 235, 0.16);
+   --shadow: 0 18px 70px rgba(0, 0, 0, 0.25);
+  }
+
+  * {
+   box-sizing: border-box;
+  }
+
+  html {
+   scroll-behavior: smooth;
+  }
+
+  body {
+   margin: 0;
+   color: var(--text);
+   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+   line-height: 1.65;
+   background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 34rem),
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.14), transparent 32rem),
+    var(--bg);
+   overflow-x: hidden;
+  }
+
+  body::before {
+   content: "";
+   position: fixed;
+   inset: 0;
+   pointer-events: none;
+   background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+   background-size: 46px 46px;
+   mask-image: linear-gradient(to bottom, black, transparent 70%);
+   z-index: -2;
+  }
+
+  a {
+   color: var(--accent);
+   text-decoration: none;
+  }
+
+  a:hover {
+   color: var(--accent-2);
+  }
+
+  .container {
+   width: min(var(--max), calc(100% - 40px));
+   margin: 0 auto;
+  }
+
+  .topbar {
+   position: sticky;
+   top: 0;
+   z-index: 50;
+   backdrop-filter: blur(18px);
+   background: color-mix(in srgb, var(--bg) 82%, transparent);
+   border-bottom: 1px solid var(--border);
+  }
+
+  .nav {
+   min-height: 72px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 18px;
+  }
+
+  .brand {
+   display: flex;
+   flex-direction: column;
+   gap: 1px;
+   font-weight: 780;
+   letter-spacing: -0.04em;
+   line-height: 1.1;
+  }
+
+  .brand span:last-child {
+   color: var(--muted);
+   font-size: 13px;
+   font-weight: 650;
+   letter-spacing: normal;
+  }
+
+  .nav-links {
+   display: flex;
+   align-items: center;
+   gap: 18px;
+   font-size: 14px;
+   font-weight: 650;
+   color: var(--muted);
+  }
+
+  .nav-links a {
+   color: var(--muted);
+  }
+
+  .nav-links a:hover {
+   color: var(--accent);
+  }
+
+  .theme-button {
+   border: 1px solid var(--border);
+   background: var(--surface);
+   color: var(--text);
+   border-radius: 999px;
+   padding: 8px 12px;
+   cursor: pointer;
+   font-weight: 750;
+   box-shadow: none;
+  }
+
+  .hero {
+   padding: 88px 0 54px;
+  }
+
+  .hero-layout {
+   display: grid;
+   grid-template-columns: 1.24fr 0.76fr;
+   align-items: center;
+   gap: 38px;
+  }
+
+  .pill {
+   display: inline-flex;
+   align-items: center;
+   gap: 9px;
+   padding: 8px 12px;
+   border: 1px solid var(--border);
+   border-radius: 999px;
+   color: var(--accent);
+   background: var(--surface);
+   font-size: 13px;
+   font-weight: 750;
+   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  }
+
+  h1 {
+   margin: 22px 0 0;
+   max-width: 850px;
+   font-size: clamp(42px, 7vw, 80px);
+   line-height: 0.97;
+   letter-spacing: -0.075em;
+  }
+
+  .hero-text {
+   margin-top: 26px;
+   max-width: 780px;
+   color: var(--muted);
+   font-size: 20px;
+   line-height: 1.7;
+  }
+
+  .cta {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 12px;
+   margin-top: 30px;
+  }
+
+  .btn {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 46px;
+   padding: 12px 18px;
+   border-radius: 14px;
+   font-weight: 800;
+   border: 1px solid var(--border);
+   transition: transform 160ms ease, background 160ms ease;
+  }
+
+  .btn:hover {
+   transform: translateY(-1px);
+  }
+
+  .btn.primary {
+   background: linear-gradient(135deg, var(--accent), var(--accent-2));
+   color: #fff;
+   border-color: transparent;
+  }
+
+  .btn.secondary {
+   background: var(--surface);
+   color: var(--text);
+  }
+
+
+  .avatar-wrap {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 18px;
+  }
+
+  .avatar {
+   width: 136px;
+   height: 136px;
+   border-radius: 999px;
+   object-fit: cover;
+   object-position: center;
+   border: 4px solid color-mix(in srgb, var(--surface-solid) 80%, transparent);
+   box-shadow: 0 18px 42px rgba(15, 23, 42, 0.18);
+   background: var(--surface-solid);
+  }
+
+  .profile-name {
+   text-align: center;
+   margin: 0 0 4px;
+   font-size: 22px;
+   letter-spacing: -0.04em;
+   font-weight: 850;
+  }
+
+  .profile-title {
+   text-align: center;
+   margin: 0 0 16px;
+   color: var(--muted);
+   font-size: 14px;
+   font-weight: 700;
+  }
+
+  .profile-card {
+   position: relative;
+   border: 1px solid var(--border);
+   background: var(--surface);
+   border-radius: var(--radius-xl);
+   padding: 26px;
+   box-shadow: var(--shadow);
+   overflow: hidden;
+  }
+
+  .profile-card::before {
+   content: "";
+   position: absolute;
+   inset: -1px;
+   background:
+    radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.18), transparent 14rem),
+    radial-gradient(circle at 80% 10%, rgba(14, 165, 233, 0.12), transparent 14rem);
+   z-index: -1;
+  }
+
+  .metric {
+   display: grid;
+   grid-template-columns: 82px 1fr;
+   gap: 14px;
+   align-items: center;
+   padding: 14px 0;
+   border-bottom: 1px solid var(--border);
+  }
+
+  .metric:last-child {
+   border-bottom: none;
+  }
+
+  .metric strong {
+   font-size: 27px;
+   letter-spacing: -0.05em;
+  }
+
+  .metric span {
+   color: var(--muted);
+   font-size: 14px;
+   font-weight: 650;
+  }
+
+  section {
+   padding: 36px 0;
+  }
+
+  .section-head {
+   display: flex;
+   align-items: end;
+   justify-content: space-between;
+   gap: 24px;
+   margin-bottom: 18px;
+  }
+
+  h2 {
+   margin: 0;
+   font-size: clamp(28px, 4vw, 42px);
+   line-height: 1.05;
+   letter-spacing: -0.06em;
+  }
+
+  .section-note {
+   margin: 0;
+   max-width: 640px;
+   color: var(--muted);
+  }
+
+  .panel {
+   border: 1px solid var(--border);
+   background: var(--surface);
+   border-radius: var(--radius-xl);
+   box-shadow: var(--shadow);
+  }
+
+  .about-panel {
+   padding: 28px;
+   display: grid;
+   grid-template-columns: 1fr 0.72fr;
+   gap: 26px;
+  }
+
+  .about-panel p {
+   margin: 0 0 16px;
+   color: var(--muted);
+   font-size: 17px;
+  }
+
+  .stack {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+  }
+
+  .tag {
+   display: inline-flex;
+   align-items: center;
+   min-height: 32px;
+   padding: 7px 11px;
+   background: var(--accent-soft);
+   color: color-mix(in srgb, var(--accent) 88%, var(--text));
+   border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+   border-radius: 999px;
+   font-size: 13px;
+   font-weight: 750;
+  }
+
+  .grid {
+   display: grid;
+   gap: 16px;
+  }
+
+  .grid.two {
+   grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid.three {
+   grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .card {
+   border: 1px solid var(--border);
+   background: var(--surface);
+   border-radius: var(--radius-lg);
+   padding: 22px;
+   min-height: 154px;
+  }
+
+  .card h3 {
+   margin: 0 0 10px;
+   font-size: 18px;
+   letter-spacing: -0.025em;
+  }
+
+  .card p {
+   margin: 0;
+   color: var(--muted);
+  }
+
+  .card .number {
+   color: var(--accent);
+   font-weight: 900;
+   margin-bottom: 12px;
+   letter-spacing: -0.03em;
+  }
+
+  .open-panel {
+   padding: 24px;
+   display: grid;
+   grid-template-columns: 1fr auto;
+   gap: 22px;
+   align-items: center;
+  }
+
+  .open-panel p {
+   margin: 8px 0 0;
+   color: var(--muted);
+  }
+
+  .recent-list {
+   display: grid;
+   grid-template-columns: repeat(3, minmax(0, 1fr));
+   gap: 12px;
+  }
+
+  .recent-item {
+   border: 1px solid var(--border);
+   background: var(--surface);
+   border-radius: 16px;
+   padding: 16px;
+   color: var(--muted);
+   font-weight: 700;
+  }
+
+  .timeline {
+   display: grid;
+   gap: 14px;
+  }
+
+  .role {
+   border: 1px solid var(--border);
+   background: var(--surface);
+   border-radius: var(--radius-lg);
+   padding: 22px;
+  }
+
+  .role-head {
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+   gap: 18px;
+   margin-bottom: 10px;
+  }
+
+  .role h3 {
+   margin: 0;
+   font-size: 18px;
+  }
+
+  .meta {
+   color: var(--faint);
+   font-weight: 700;
+   font-size: 13px;
+  }
+
+  ul {
+   margin: 12px 0 0;
+   padding-left: 20px;
+   color: var(--muted);
+  }
+
+  li {
+   margin: 7px 0;
+  }
+
+  .contact {
+   padding: 28px;
+   display: grid;
+   grid-template-columns: 1fr auto;
+   align-items: center;
+   gap: 20px;
+   color: white;
+   background:
+    radial-gradient(circle at top left, rgba(96, 165, 250, 0.38), transparent 20rem),
+    linear-gradient(135deg, #0f172a, #172554);
+   border-radius: var(--radius-xl);
+   overflow: hidden;
+  }
+
+  .contact h2,
+  .contact p {
+   color: white;
+  }
+
+  .contact p {
+   margin: 12px 0 0;
+   opacity: 0.84;
+  }
+
+  .contact .btn.secondary {
+   background: rgba(255, 255, 255, 0.12);
+   color: white;
+   border-color: rgba(255, 255, 255, 0.22);
+  }
+
+  footer {
+   padding: 34px 0 46px;
+   color: var(--faint);
+   font-size: 14px;
+   text-align: center;
+  }
+
+  @media (max-width: 880px) {
+   .hero-layout,
+   .about-panel,
+   .grid.two,
+   .grid.three,
+   .open-panel,
+   .contact,
+   .recent-list {
+    grid-template-columns: 1fr;
+   }
+
+   .nav {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 16px 0;
+   }
+
+   .nav-links {
+    flex-wrap: wrap;
+    gap: 12px;
+   }
+
+   .hero {
+    padding-top: 52px;
+   }
+
+   .section-head,
+   .role-head {
+    flex-direction: column;
+    align-items: flex-start;
+   }
+  }
+
+  @media print {
+   .topbar, .theme-button, .cta {
+    display: none;
+   }
+
+   body {
+    background: white;
+   }
+
+   .panel, .card, .role {
+    box-shadow: none;
+    break-inside: avoid;
+   }
+  }
+ </style>
 </head>
 
 <body>
-  <header class="topbar">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Poh Seng Zhun home">
-        <span>Poh Seng Zhun</span>
-        <span>Senior Software Engineer</span>
-      </a>
+ <header class="topbar">
+  <div class="container nav">
+   <a class="brand" href="#top" aria-label="Poh Seng Zhun home">
+    <span>Poh Seng Zhun</span>
+    <span>Senior Software Engineer</span>
+   </a>
 
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#open-to">Open To</a>
-        <a href="#focus">Focus</a>
-        <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-        <button class="theme-button" id="themeToggle" type="button">Dark</button>
-      </nav>
+   <nav class="nav-links" aria-label="Main navigation">
+    <a href="#about">About</a>
+    <a href="#open-to">Open To</a>
+    <a href="#focus">Focus</a>
+    <a href="#work">Work</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+    <button class="theme-button" id="themeToggle" type="button">Dark</button>
+   </nav>
+  </div>
+ </header>
+
+ <main id="top">
+  <section class="hero">
+   <div class="container hero-layout">
+    <div>
+     <div class="pill">Senior Software Engineer · R&D · Backend & Distributed Systems</div>
+     <h1>Building reliable backend systems for complex enterprise platforms.</h1>
+     <p class="hero-text">
+      12+ years in software engineering, currently focused on Java/Spring backend services,
+      Kafka event processing, workflow orchestration, multi-tenancy, and system reliability
+      in Nokia R&D.
+     </p>
+     <div class="cta">
+      <a class="btn primary" href="mailto:pszhun90@gmail.com">Contact Me</a>
+      <a class="btn secondary" href="https://www.linkedin.com/in/pohsengzhun" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="btn secondary" href="Poh_Seng_Zhun_CV.pdf" target="_blank">Download CV</a>
+     </div>
     </div>
-  </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-layout">
-        <div>
-          <div class="pill">Senior Software Engineer · R&D · Backend & Distributed Systems</div>
-          <h1>Building reliable backend systems for complex enterprise platforms.</h1>
-          <p class="hero-text">
-            12+ years in software engineering, currently focused on Java/Spring backend services,
-            Kafka event processing, workflow orchestration, multi-tenancy, and system reliability
-            in Nokia R&D.
-          </p>
-          <div class="cta">
-            <a class="btn primary" href="mailto:pszhun90@gmail.com">Contact Me</a>
-            <a class="btn secondary" href="https://www.linkedin.com/in/pohsengzhun" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="btn secondary" href="Poh_Seng_Zhun_CV.pdf" target="_blank">Download CV</a>
-          </div>
-        </div>
+    <aside class="profile-card" aria-label="At a glance">
 
-        <aside class="profile-card" aria-label="At a glance">
+     <div class="avatar-wrap">
+      <img class="avatar" src="profile.jpg" alt="Poh Seng Zhun profile photo" />
+     </div>
+     <h2 class="profile-name">Poh Seng Zhun</h2>
+     <p class="profile-title">Senior Software Engineer · Backend & Distributed Systems</p>
 
-          <div class="avatar-wrap">
-            <img class="avatar" src="profile.jpg" alt="Poh Seng Zhun profile photo" />
-          </div>
-          <h2 class="profile-name">Poh Seng Zhun</h2>
-          <p class="profile-title">Senior Software Engineer · Backend & Distributed Systems</p>
+     <div class="metric">
+      <strong>12+</strong>
+      <span>years in software engineering</span>
+     </div>
+     <div class="metric">
+      <strong>R&D</strong>
+      <span>Nokia backend platform experience</span>
+     </div>
+     <div class="metric">
+      <strong>Stack</strong>
+      <span>Java, Spring Boot, Kafka, MongoDB, Kubernetes</span>
+     </div>
+     <div class="metric">
+      <strong>Open</strong>
+      <span>Malaysia, Singapore, Australia, New Zealand & APAC remote</span>
+     </div>
+    </aside>
+   </div>
+  </section>
 
-          <div class="metric">
-            <strong>12+</strong>
-            <span>years in software engineering</span>
-          </div>
-          <div class="metric">
-            <strong>R&D</strong>
-            <span>Nokia backend platform experience</span>
-          </div>
-          <div class="metric">
-            <strong>Stack</strong>
-            <span>Java, Spring Boot, Kafka, MongoDB, Kubernetes</span>
-          </div>
-          <div class="metric">
-            <strong>Open</strong>
-            <span>Malaysia, Singapore, Australia, New Zealand & APAC remote</span>
-          </div>
-        </aside>
+  <section id="about">
+   <div class="container">
+    <div class="section-head">
+     <h2>About</h2>
+     <p class="section-note">A concise snapshot of my recent engineering focus.</p>
+    </div>
+
+    <div class="about-panel panel">
+     <div>
+      <p>
+       I am a Senior Software Engineer with 12+ years of experience in backend development,
+       distributed systems, and enterprise-scale platform engineering.
+      </p>
+      <p>
+       Currently, I work in Nokia R&D on backend systems for telecom orchestration and
+       order management platforms. My recent work covers Java/Spring backend services,
+       Kafka message processing, MongoDB/Cassandra data handling, workflow orchestration,
+       multi-tenancy, alarm/watchpoint processing, performance analysis, and production-like troubleshooting.
+      </p>
+      <p>
+       I enjoy solving complex backend problems, improving system reliability, and building
+       maintainable platforms where scalability, performance, and engineering quality matter.
+      </p>
+     </div>
+
+     <div>
+      <div class="stack">
+       <span class="tag">Java</span>
+       <span class="tag">Spring Boot</span>
+       <span class="tag">Kafka</span>
+       <span class="tag">MongoDB</span>
+       <span class="tag">Cassandra</span>
+       <span class="tag">MariaDB</span>
+       <span class="tag">Kubernetes</span>
+       <span class="tag">Docker</span>
+       <span class="tag">Helm</span>
+       <span class="tag">Jenkins</span>
+       <span class="tag">Linux</span>
+       <span class="tag">REST APIs</span>
+       <span class="tag">Microservices</span>
+       <span class="tag">System Design</span>
+       <span class="tag">Performance Optimisation</span>
+       <span class="tag">Distributed Systems</span>
+       <span class="tag">AI-Assisted Engineering</span>
       </div>
-    </section>
+     </div>
+    </div>
+   </div>
+  </section>
 
-    <section id="about">
-      <div class="container">
-        <div class="section-head">
-          <h2>About</h2>
-          <p class="section-note">A concise snapshot of my recent engineering focus.</p>
-        </div>
+  <section id="open-to">
+   <div class="container">
+    <div class="open-panel panel">
+     <div>
+      <h2>Open to selected opportunities</h2>
+      <p>
+       Open to Malaysia, Singapore, Australia, New Zealand, and APAC-friendly remote roles
+       in backend engineering, platform engineering, R&D, distributed systems, and AI-assisted engineering.
+      </p>
+     </div>
+     <a class="btn secondary" href="mailto:pszhun90@gmail.com">Start a conversation</a>
+    </div>
+   </div>
+  </section>
 
-        <div class="about-panel panel">
-          <div>
-            <p>
-              I am a Senior Software Engineer with 12+ years of experience in backend development,
-              distributed systems, and enterprise-scale platform engineering.
-            </p>
-            <p>
-              Currently, I work in Nokia R&D on backend systems for telecom orchestration and
-              order management platforms. My recent work covers Java/Spring backend services,
-              Kafka message processing, MongoDB/Cassandra data handling, workflow orchestration,
-              multi-tenancy, alarm/watchpoint processing, performance analysis, and production-like troubleshooting.
-            </p>
-            <p>
-              I enjoy solving complex backend problems, improving system reliability, and building
-              maintainable platforms where scalability, performance, and engineering quality matter.
-            </p>
-          </div>
+  <section id="focus">
+   <div class="container">
+    <div class="section-head">
+     <h2>Engineering Focus</h2>
+     <p class="section-note">The areas I want hiring teams to associate with my profile today.</p>
+    </div>
 
-          <div>
-            <div class="stack">
-              <span class="tag">Java</span>
-              <span class="tag">Spring Boot</span>
-              <span class="tag">Kafka</span>
-              <span class="tag">MongoDB</span>
-              <span class="tag">Cassandra</span>
-              <span class="tag">MariaDB</span>
-              <span class="tag">Kubernetes</span>
-              <span class="tag">Docker</span>
-              <span class="tag">Helm</span>
-              <span class="tag">Jenkins</span>
-              <span class="tag">Linux</span>
-              <span class="tag">REST APIs</span>
-              <span class="tag">Microservices</span>
-              <span class="tag">System Design</span>
-              <span class="tag">Performance Optimisation</span>
-              <span class="tag">Distributed Systems</span>
-              <span class="tag">AI-Assisted Engineering</span>
-            </div>
-          </div>
-        </div>
+    <div class="grid two">
+     <article class="card">
+      <div class="number">01</div>
+      <h3>Backend & Platform Engineering</h3>
+      <p>Designing and enhancing backend services using Java, Spring Boot, REST APIs, microservices, and enterprise platform components.</p>
+     </article>
+
+     <article class="card">
+      <div class="number">02</div>
+      <h3>Event-Driven Systems</h3>
+      <p>Working with Kafka-based message processing, retry handling, event ordering, consumer lag analysis, and high-volume processing scenarios.</p>
+     </article>
+
+     <article class="card">
+      <div class="number">03</div>
+      <h3>Reliability & Performance</h3>
+      <p>Investigating production-like issues, database update flows, transaction conflicts, throughput bottlenecks, and system behaviour under load.</p>
+     </article>
+
+     <article class="card">
+      <div class="number">04</div>
+      <h3>Workflow & System Integration</h3>
+      <p>Supporting workflow orchestration, model-driven execution, external system integration, automation, and engineering productivity improvements.</p>
+     </article>
+    </div>
+   </div>
+  </section>
+
+  <section id="work">
+   <div class="container">
+    <div class="section-head">
+     <h2>Selected Work</h2>
+     <p class="section-note">Recent areas of contribution, written without exposing confidential implementation details.</p>
+    </div>
+
+    <div class="grid two">
+     <article class="card">
+      <h3>Jeopardy Management & Watchpoint Alarms</h3>
+      <p>Designed and enhanced event-driven alarm processing for order and order-item lifecycle monitoring, including state transitions such as Approaching, Missed, and Cleared.</p>
+     </article>
+
+     <article class="card">
+      <h3>Kafka Reliability Analysis</h3>
+      <p>Analysed consumer lag, partition behaviour, event ordering, retry handling, and high-volume message processing to improve backend reliability.</p>
+     </article>
+
+     <article class="card">
+      <h3>MongoDB Performance Investigation</h3>
+      <p>Investigated dynamic queries, bulk updates, transaction conflicts, and update-flow bottlenecks under production-like load scenarios.</p>
+     </article>
+
+     <article class="card">
+      <h3>Multi-Tenancy Enablement</h3>
+      <p>Implemented tenant-aware backend behaviour including header propagation, validation handling, and compatibility across different message broker flows.</p>
+     </article>
+
+     <article class="card">
+      <h3>Model-Driven Orchestration</h3>
+      <p>Contributed to workflow execution, model-driven framework capabilities, capability class processing, asset versioning, and external system integration.</p>
+     </article>
+
+     <article class="card">
+      <h3>Automation & Debugging Tooling</h3>
+      <p>Built scripts, test support utilities, and operational tooling for debugging, performance analysis, lab validation, and regression testing.</p>
+     </article>
+    </div>
+   </div>
+  </section>
+
+  <section id="recent">
+   <div class="container">
+    <div class="section-head">
+     <h2>Recent Engineering Areas</h2>
+     <p class="section-note">A quick view of what best represents my recent work.</p>
+    </div>
+
+    <div class="recent-list">
+     <div class="recent-item">Event-driven alarm processing</div>
+     <div class="recent-item">Kafka reliability analysis</div>
+     <div class="recent-item">MongoDB performance investigation</div>
+     <div class="recent-item">Multi-tenancy enablement</div>
+     <div class="recent-item">Model-driven orchestration</div>
+     <div class="recent-item">Automation & debugging tooling</div>
+    </div>
+   </div>
+  </section>
+
+  <section id="experience">
+   <div class="container">
+    <div class="section-head">
+     <h2>Experience</h2>
+     <p class="section-note">Focused on recent backend and R&D experience while keeping earlier roles concise.</p>
+    </div>
+
+    <div class="timeline">
+     <article class="role">
+      <div class="role-head">
+       <div>
+        <h3>Senior Software Engineer · Nokia</h3>
+        <div class="meta">Aug 2021 – Present · Kuala Lumpur, Malaysia</div>
+       </div>
+       <div class="meta">R&D · Backend · Distributed Systems</div>
       </div>
-    </section>
+      <ul>
+       <li>Develop backend services for enterprise-scale telecom orchestration and order management platforms.</li>
+       <li>Contribute across Order Management, Order Presentation, Generic Type Driver, Workflow Engine, and Model-Driven Framework components.</li>
+       <li>Focus on Kafka event processing, MongoDB/Cassandra data handling, multi-tenancy, workflow orchestration, reliability, and automation tooling.</li>
+      </ul>
+     </article>
 
-    <section id="open-to">
-      <div class="container">
-        <div class="open-panel panel">
-          <div>
-            <h2>Open to selected opportunities</h2>
-            <p>
-              Open to Malaysia, Singapore, Australia, New Zealand, and APAC-friendly remote roles
-              in backend engineering, platform engineering, R&D, distributed systems, and AI-assisted engineering.
-            </p>
-          </div>
-          <a class="btn secondary" href="mailto:pszhun90@gmail.com">Start a conversation</a>
-        </div>
+     <article class="role">
+      <div class="role-head">
+       <div>
+        <h3>Software Engineering Lead · AIA Malaysia</h3>
+        <div class="meta">Mar 2021 – Jul 2021 · Kuala Lumpur, Malaysia</div>
+       </div>
       </div>
-    </section>
+      <p class="section-note">Supported enterprise system enhancements, issue analysis, stakeholder coordination, and software delivery in the insurance domain.</p>
+     </article>
 
-    <section id="focus">
-      <div class="container">
-        <div class="section-head">
-          <h2>Engineering Focus</h2>
-          <p class="section-note">The areas I want hiring teams to associate with my profile today.</p>
-        </div>
-
-        <div class="grid two">
-          <article class="card">
-            <div class="number">01</div>
-            <h3>Backend & Platform Engineering</h3>
-            <p>Designing and enhancing backend services using Java, Spring Boot, REST APIs, microservices, and enterprise platform components.</p>
-          </article>
-
-          <article class="card">
-            <div class="number">02</div>
-            <h3>Event-Driven Systems</h3>
-            <p>Working with Kafka-based message processing, retry handling, event ordering, consumer lag analysis, and high-volume processing scenarios.</p>
-          </article>
-
-          <article class="card">
-            <div class="number">03</div>
-            <h3>Reliability & Performance</h3>
-            <p>Investigating production-like issues, database update flows, transaction conflicts, throughput bottlenecks, and system behaviour under load.</p>
-          </article>
-
-          <article class="card">
-            <div class="number">04</div>
-            <h3>Workflow & System Integration</h3>
-            <p>Supporting workflow orchestration, model-driven execution, external system integration, automation, and engineering productivity improvements.</p>
-          </article>
-        </div>
+     <article class="role">
+      <div class="role-head">
+       <div>
+        <h3>Software Engineer · Nokia / Comptel</h3>
+        <div class="meta">Apr 2016 – Feb 2021 · Kuala Lumpur, Malaysia</div>
+       </div>
       </div>
-    </section>
+      <p class="section-note">Developed backend components for telecom and service orchestration products using Java, Spring Framework, REST/SOAP integrations, CI/CD pipelines, Docker, and Linux.</p>
+     </article>
 
-    <section id="work">
-      <div class="container">
-        <div class="section-head">
-          <h2>Selected Work</h2>
-          <p class="section-note">Recent areas of contribution, written without exposing confidential implementation details.</p>
-        </div>
-
-        <div class="grid two">
-          <article class="card">
-            <h3>Jeopardy Management & Watchpoint Alarms</h3>
-            <p>Designed and enhanced event-driven alarm processing for order and order-item lifecycle monitoring, including state transitions such as Approaching, Missed, and Cleared.</p>
-          </article>
-
-          <article class="card">
-            <h3>Kafka Reliability Analysis</h3>
-            <p>Analysed consumer lag, partition behaviour, event ordering, retry handling, and high-volume message processing to improve backend reliability.</p>
-          </article>
-
-          <article class="card">
-            <h3>MongoDB Performance Investigation</h3>
-            <p>Investigated dynamic queries, bulk updates, transaction conflicts, and update-flow bottlenecks under production-like load scenarios.</p>
-          </article>
-
-          <article class="card">
-            <h3>Multi-Tenancy Enablement</h3>
-            <p>Implemented tenant-aware backend behaviour including header propagation, validation handling, and compatibility across different message broker flows.</p>
-          </article>
-
-          <article class="card">
-            <h3>Model-Driven Orchestration</h3>
-            <p>Contributed to workflow execution, model-driven framework capabilities, capability class processing, asset versioning, and external system integration.</p>
-          </article>
-
-          <article class="card">
-            <h3>Automation & Debugging Tooling</h3>
-            <p>Built scripts, test support utilities, and operational tooling for debugging, performance analysis, lab validation, and regression testing.</p>
-          </article>
-        </div>
+     <article class="role">
+      <div class="role-head">
+       <div>
+        <h3>Software Engineer · Silverlake System</h3>
+        <div class="meta">Jul 2012 – Apr 2016 · Kuala Lumpur, Malaysia</div>
+       </div>
       </div>
-    </section>
+      <p class="section-note">Built and maintained web applications and REST services for investment and capital market systems.</p>
+     </article>
+    </div>
+   </div>
+  </section>
 
-    <section id="recent">
-      <div class="container">
-        <div class="section-head">
-          <h2>Recent Engineering Areas</h2>
-          <p class="section-note">A quick view of what best represents my recent work.</p>
-        </div>
+  <section id="contact">
+   <div class="container">
+    <div class="contact">
+     <div>
+      <h2>Let’s connect</h2>
+      <p>
+       Open to R&D, backend engineering, platform engineering, distributed systems,
+       AI-assisted engineering, and APAC-friendly remote opportunities.
+      </p>
+     </div>
+     <div class="cta">
+      <a class="btn primary" href="mailto:pszhun90@gmail.com">Email Me</a>
+      <a class="btn secondary" href="https://www.linkedin.com/in/pohsengzhun" target="_blank" rel="noreferrer">LinkedIn</a>
+     </div>
+    </div>
+   </div>
+  </section>
+ </main>
 
-        <div class="recent-list">
-          <div class="recent-item">Event-driven alarm processing</div>
-          <div class="recent-item">Kafka reliability analysis</div>
-          <div class="recent-item">MongoDB performance investigation</div>
-          <div class="recent-item">Multi-tenancy enablement</div>
-          <div class="recent-item">Model-driven orchestration</div>
-          <div class="recent-item">Automation & debugging tooling</div>
-        </div>
-      </div>
-    </section>
+ <footer>
+  <div class="container">© 2026 Poh Seng Zhun · Online Resume Landing Page</div>
+ </footer>
 
-    <section id="experience">
-      <div class="container">
-        <div class="section-head">
-          <h2>Experience</h2>
-          <p class="section-note">Focused on recent backend and R&D experience while keeping earlier roles concise.</p>
-        </div>
+ <script>
+  const root = document.documentElement;
+  const button = document.getElementById("themeToggle");
+  const storedTheme = localStorage.getItem("theme");
 
-        <div class="timeline">
-          <article class="role">
-            <div class="role-head">
-              <div>
-                <h3>Senior Software Engineer · Nokia</h3>
-                <div class="meta">Aug 2021 – Present · Kuala Lumpur, Malaysia</div>
-              </div>
-              <div class="meta">R&D · Backend · Distributed Systems</div>
-            </div>
-            <ul>
-              <li>Develop backend services for enterprise-scale telecom orchestration and order management platforms.</li>
-              <li>Contribute across Order Management, Order Presentation, Generic Type Driver, Workflow Engine, and Model-Driven Framework components.</li>
-              <li>Focus on Kafka event processing, MongoDB/Cassandra data handling, multi-tenancy, workflow orchestration, reliability, and automation tooling.</li>
-            </ul>
-          </article>
+  if (storedTheme) {
+   root.setAttribute("data-theme", storedTheme);
+   button.textContent = storedTheme === "dark" ? "Light" : "Dark";
+  }
 
-          <article class="role">
-            <div class="role-head">
-              <div>
-                <h3>Software Engineering Lead · AIA Malaysia</h3>
-                <div class="meta">Mar 2021 – Jul 2021 · Kuala Lumpur, Malaysia</div>
-              </div>
-            </div>
-            <p class="section-note">Supported enterprise system enhancements, issue analysis, stakeholder coordination, and software delivery in the insurance domain.</p>
-          </article>
-
-          <article class="role">
-            <div class="role-head">
-              <div>
-                <h3>Software Engineer · Nokia / Comptel</h3>
-                <div class="meta">Apr 2016 – Feb 2021 · Kuala Lumpur, Malaysia</div>
-              </div>
-            </div>
-            <p class="section-note">Developed backend components for telecom and service orchestration products using Java, Spring Framework, REST/SOAP integrations, CI/CD pipelines, Docker, and Linux.</p>
-          </article>
-
-          <article class="role">
-            <div class="role-head">
-              <div>
-                <h3>Software Engineer · Silverlake System</h3>
-                <div class="meta">Jul 2012 – Apr 2016 · Kuala Lumpur, Malaysia</div>
-              </div>
-            </div>
-            <p class="section-note">Built and maintained web applications and REST services for investment and capital market systems.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="contact">
-          <div>
-            <h2>Let’s connect</h2>
-            <p>
-              Open to R&D, backend engineering, platform engineering, distributed systems,
-              AI-assisted engineering, and APAC-friendly remote opportunities.
-            </p>
-          </div>
-          <div class="cta">
-            <a class="btn primary" href="mailto:pszhun90@gmail.com">Email Me</a>
-            <a class="btn secondary" href="https://www.linkedin.com/in/pohsengzhun" target="_blank" rel="noreferrer">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">© 2026 Poh Seng Zhun · Online Resume Landing Page</div>
-  </footer>
-
-  <script>
-    const root = document.documentElement;
-    const button = document.getElementById("themeToggle");
-    const storedTheme = localStorage.getItem("theme");
-
-    if (storedTheme) {
-      root.setAttribute("data-theme", storedTheme);
-      button.textContent = storedTheme === "dark" ? "Light" : "Dark";
-    }
-
-    button.addEventListener("click", () => {
-      const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      root.setAttribute("data-theme", next);
-      localStorage.setItem("theme", next);
-      button.textContent = next === "dark" ? "Light" : "Dark";
-    });
-  </script>
+  button.addEventListener("click", () => {
+   const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+   root.setAttribute("data-theme", next);
+   localStorage.setItem("theme", next);
+   button.textContent = next === "dark" ? "Light" : "Dark";
+  });
+ </script>
 </body>
 </html>
